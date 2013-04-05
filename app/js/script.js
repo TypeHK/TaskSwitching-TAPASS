@@ -317,12 +317,14 @@ function processResponse(i, stimuli, position, responseTime, response){
  */
 
 function nextSlide(){
-	slideCounter++;	
+	slideCounter++;
+	console.log(slideCounter)
 	var curr = slideOrder[slideCounter - 1] 		// Current slide
 	var next = slideOrder[slideCounter] 			// Select next slide
 	console.log(next)
 	if (curr == "switch-final" | curr == "dualtask-final"){
 			disableSpacebar()
+			window.location.href = 'windows./lotus/TAPASS/end_task' // Task End
 	} else if(next == 'trials'){					// Setup Trial
 		$('.trials').show(0, function(){
 		    $(this).trigger('isVisible')
@@ -736,12 +738,12 @@ function removeSlide(){ // Remove slides which merely functioned to inform the i
 		verticalMode = ($.urlParam('instructions') == 'vertical') ? true : false
 		session = $.urlParam('session')
 	 	initSlides()
-	 	// $('.' + slides[0][0]).show() // Activate first slide
+	 	$('.' + slides[0][0]).show() // Activate first slide
 	// Dual Task Test Settings 
-	 	$('.' + slides[0][46]).show() // Activate first slide
-	 	slideCounter = 46
-	 	trialCounter = 320
-	 	blockCounter = 12
+	 	// $('.' + slides[0][46]).show() // Activate first slide
+	 	// slideCounter = 46
+	 	// trialCounter = 320
+	 	// blockCounter = 12
 	} else {
 		$('.start').show() // Activate configuration slide
 		$('#setMode').click(function(){ 
