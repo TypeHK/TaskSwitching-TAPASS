@@ -427,7 +427,12 @@ function populateScore(){
 
 function completeBlock(){
     blockCounter++;
-    console.dir(userData) // This is the point where the JSON data should be sent to Neurotest servers
+    console.dir(userData) // This is the point where the JSON data should be sent to Neurotest servers	$.ajax({
+	$.ajax({
+		url: "/lotus/TAPASS/event/store_data",
+		type: "POST",
+		data: userData
+	});
     nextSlide()
     populateScore()
 	enableSpacebar()
@@ -563,8 +568,6 @@ function getResponse(i, stimuli, position){
 		})
 	}
 }
-
-
 
 function slideInterval(i){
     $('td[id*="Q"] > span').hide()
