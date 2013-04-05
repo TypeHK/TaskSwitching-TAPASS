@@ -318,7 +318,6 @@ function processResponse(i, stimuli, position, responseTime, response){
 
 function nextSlide(){
 	slideCounter++;
-	console.log(slideCounter)
 	var curr = slideOrder[slideCounter - 1] 		// Current slide
 	var next = slideOrder[slideCounter] 			// Select next slide
 	console.log(next)
@@ -343,7 +342,6 @@ function nextSlide(){
 function nextBlock(){
 	disableSpacebar()
 	curTrial = trialOrder[blockCounter]
-    // console.log(blockCounter, curTrial)
 	userData = newTapassData(curTrial[0], curTrial[1], getTrialUnit(curTrial))
 	userData['data'] = []
 	// Order in which the stimuli appear
@@ -429,7 +427,7 @@ function populateScore(){
 
 function completeBlock(){
     blockCounter++;
-    console.dir(userData) // This is the point where the JSON data should be sent to Neurotest servers	$.ajax({
+    console.dir(userData) // Data sent to Lotus
 	$.ajax({
 		url: "/lotus/TAPASS/event/store_data",
 		type: "POST",
