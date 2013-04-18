@@ -421,6 +421,7 @@ function populateScore(){
     $('.' + slideOrder[slideCounter] + ' .validityAbsoluteResult').html(val.toFixed(0))
     $('.' + slideOrder[slideCounter] + ' .validityAbsoluteResultDual').html(sval.toFixed(0))
     $('.' + slideOrder[slideCounter] + ' .validityRelativeResult').html(mval.toFixed(0))
+    $('.' + slideOrder[slideCounter] + ' .validityRelativeResultDual').html(sval.toFixed(0))
     $('.' + slideOrder[slideCounter] + ' .responseTimeResult').html(mrt.toFixed(0))
     $('.' + slideOrder[slideCounter] + ' .adviceResult').html(msg)
 }
